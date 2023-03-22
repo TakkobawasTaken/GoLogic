@@ -98,9 +98,9 @@ public class GUI extends JFrame {
      */
     private void initWindow() {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Java Go game");
+        setTitle("Go game");
         setPreferredSize(new Dimension(width, height));
-        setResizable(false);
+        setResizable(true);
         setVisible(true);
     }
 
@@ -234,7 +234,7 @@ public class GUI extends JFrame {
         jAboutInfo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(GUI.this, "Thomas BUICK, Thomas DURAND et Loic MOLLET-PADIER\nVersion 0.3.14", "Informations", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(GUI.this, "Joseph Gamaliel T. Nchuisseu, Filip Niksic-Nadeau and Tanraj Aujla\nVersion 1.0.0", "Informations", JOptionPane.PLAIN_MESSAGE);
             }
         });
 

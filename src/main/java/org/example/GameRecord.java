@@ -9,7 +9,7 @@ import java.util.Stack;
 
 public class GameRecord {
     /**
-     * Stacks all the preceding moves, when a new move is made ir is applied from the head of the stack.
+     * Stacks all the preceding moves, when a new move is made or is applied from the head of the stack.
      */
     private final Stack<GameTurn> preceding;
 
