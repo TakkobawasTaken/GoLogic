@@ -5,45 +5,68 @@ import org.example.Goban;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Sprite {
     public static final int TOKEN_INITIAL_SIZE = GUI.TOKEN_INITIAL_SIZE;
 
+    static URL urlBackground = Sprite.class.getClassLoader().getResource("sprites/b.png");
     // Background sprite, for color
-    private static final ImageIcon background = new ImageIcon(new ImageIcon("/sprites/background.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE, TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon background = new ImageIcon(new ImageIcon(urlBackground).getImage().getScaledInstance(TOKEN_INITIAL_SIZE, TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+
+    static URL urlGrid_ul = Sprite.class.getClassLoader().getResource("sprites/ul.png");
+    static URL urlGrid_u = Sprite.class.getClassLoader().getResource("sprites/u.png");
+    static URL urlGrid_ur = Sprite.class.getClassLoader().getResource("sprites/ur.png");
+    static URL urlGrid_l = Sprite.class.getClassLoader().getResource("sprites/l.png");
+    static URL urlGrid_c = Sprite.class.getClassLoader().getResource("sprites/c.png");
+    static URL urlGrid_spot = Sprite.class.getClassLoader().getResource("sprites/spot.png");
+    static URL urlGrid_r = Sprite.class.getClassLoader().getResource("sprites/r.png");
+    static URL urlGrid_bl = Sprite.class.getClassLoader().getResource("sprites/bl.png");
+    static URL urlGrid_b = Sprite.class.getClassLoader().getResource("sprites/b.png");
+    static URL urlGrid_br = Sprite.class.getClassLoader().getResource("sprites/br.png");
+    static URL url_p1 = Sprite.class.getClassLoader().getResource("sprites/p1.png");
+    static URL url_p2 = Sprite.class.getClassLoader().getResource("sprites/p2.png");
+    static URL url_wrong = Sprite.class.getClassLoader().getResource("sprites/wrong.png");
+
+    static URL url_mp1 = Sprite.class.getClassLoader().getResource("sprites/mp1.png");
+    static URL url_mp2 = Sprite.class.getClassLoader().getResource("sprites/mp2.png");
+
 
     // All grid sprites
-    public static final ImageIcon grid_ul = new ImageIcon(new ImageIcon("/sprites/ul.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
-    public static final ImageIcon grid_u = new ImageIcon(new ImageIcon("/sprites/u.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
-    public static final ImageIcon grid_ur = new ImageIcon(new ImageIcon("/sprites/ur.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
-    public static final ImageIcon grid_l = new ImageIcon(new ImageIcon("/sprites/l.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
-    public static final ImageIcon grid_c = new ImageIcon(new ImageIcon("/sprites/c.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
-    public static final ImageIcon grid_spot = new ImageIcon(new ImageIcon("/sprites/spot.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
-    public static final ImageIcon grid_r = new ImageIcon(new ImageIcon("/sprites/r.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
-    public static final ImageIcon grid_bl = new ImageIcon(new ImageIcon("/sprites/bl.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
-    public static final ImageIcon grid_b = new ImageIcon(new ImageIcon("/sprites/b.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
-    public static final ImageIcon grid_br = new ImageIcon(new ImageIcon("/sprites/br.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon grid_ul = new ImageIcon(new ImageIcon(urlGrid_ul).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon grid_u = new ImageIcon(new ImageIcon(urlGrid_u).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon grid_ur = new ImageIcon(new ImageIcon(urlGrid_ur).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon grid_l = new ImageIcon(new ImageIcon(urlGrid_l).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon grid_c = new ImageIcon(new ImageIcon(urlGrid_c).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon grid_spot = new ImageIcon(new ImageIcon(urlGrid_spot).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon grid_r = new ImageIcon(new ImageIcon(urlGrid_r).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon grid_bl = new ImageIcon(new ImageIcon(urlGrid_bl).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon grid_b = new ImageIcon(new ImageIcon(urlGrid_b).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon grid_br = new ImageIcon(new ImageIcon(urlGrid_br).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+
+    public static final ImageIcon wrong = new ImageIcon(new ImageIcon(url_wrong).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon mp1 = new ImageIcon(new ImageIcon(url_mp1).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon mp2 = new ImageIcon(new ImageIcon(url_mp2).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+
+    public static final ImageIcon p1 = new ImageIcon(new ImageIcon(url_p1).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
+    public static final ImageIcon p2 = new ImageIcon(new ImageIcon(url_p2).getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
 
     // Player sprites
-    private static final ImageIcon p1 = new ImageIcon(new ImageIcon("/sprites/p1.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_SMOOTH));
-    private static final ImageIcon p2 = new ImageIcon(new ImageIcon("/sprites/p2.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_SMOOTH));
-    private static final ImageIcon wrong = new ImageIcon(new ImageIcon("/sprites/wrong.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_SMOOTH));
-    private static final ImageIcon mp1 = new ImageIcon(new ImageIcon("/sprites/mp1.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
-    private static final ImageIcon mp2 = new ImageIcon(new ImageIcon("/sprites/mp2.png").getImage().getScaledInstance(TOKEN_INITIAL_SIZE,TOKEN_INITIAL_SIZE, Image.SCALE_FAST));
 
     // Images that are frequently used need initialisation
-    public static final ImageIcon grid_p1 = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p1)));
-    public static final ImageIcon grid_p2 = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p2)));
-    public static final ImageIcon grid_p1_c = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p1, wrong)), new ArrayList<Float>(Arrays.asList(Float.valueOf((float) 1.0), Float.valueOf((float)1.0), Float.valueOf((float)0.4))));
-    public static final ImageIcon grid_p2_c = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p2, wrong)), new ArrayList<Float>(Arrays.asList(Float.valueOf((float) 1.0), Float.valueOf((float)1.0), Float.valueOf((float)0.4))));
+    //public static final ImageIcon grid_p1 = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p1)));
+    //public static final ImageIcon grid_p2 = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p2)));
+    //public static final ImageIcon grid_p1_c = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p1, wrong)), new ArrayList<Float>(Arrays.asList(Float.valueOf((float) 1.0), Float.valueOf((float)1.0), Float.valueOf((float)0.4))));
+    //public static final ImageIcon grid_p2_c = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p2, wrong)), new ArrayList<Float>(Arrays.asList(Float.valueOf((float) 1.0), Float.valueOf((float)1.0), Float.valueOf((float)0.4))));
 
     /**
      * Merge the images listed in ArrayList, all with a 1.0 alpha transparency
      * @param images list of ImageIcons to merge
      * @return ImageIcon result of the merge
      */
+   /*
     public static ImageIcon merge(ArrayList<ImageIcon> images) {
         ArrayList<Float> transparency = new ArrayList<Float>();
 
@@ -53,13 +76,14 @@ public class Sprite {
 
         return merge(images, transparency);
     }
-
+*/
     /**
      * Merge the images listed in ArrayList, with the corresponding alpha transparency
      * @param images list of ImageIcons to merge
      * @param transparency list of alpha transparency
      * @return ImageIcon result of the merge
      */
+    /*
     public static ImageIcon merge(ArrayList<ImageIcon> images, ArrayList<Float> transparency)
     {
         BufferedImage dest = null;
@@ -89,7 +113,7 @@ public class Sprite {
 
         return new ImageIcon(dest);
     }
-
+*/
     /**
      * Allow to know if the intersection should be marked on the goban
      * @param goban goban to get the size of this one
@@ -128,7 +152,7 @@ public class Sprite {
                 break;
         }
 
-        return merge(new ArrayList<ImageIcon>(Arrays.asList(getGridIcon(goban, x, y), mp)));
+        return grid_ul;
     }
 
     /**
@@ -176,9 +200,9 @@ public class Sprite {
     public static ImageIcon getPlayerIcon(int player) {
         switch (player) {
             case 1:
-                return grid_p1;
+                return grid_ul;
             case 2:
-                return grid_p2;
+                return grid_ul;
             default:
                 return null;
         }
@@ -188,9 +212,9 @@ public class Sprite {
         if (player != owner) {
             switch (player) {
                 case 1:
-                    return merge(new ArrayList<ImageIcon>(Arrays.asList(getGridIcon(goban, x, y), p1, mp2)), new ArrayList<Float>(Arrays.asList(Float.valueOf((float) 1.0), Float.valueOf((float)0.6), Float.valueOf((float)1.0))));
+                    return grid_ul;
                 case 2:
-                    return merge(new ArrayList<ImageIcon>(Arrays.asList(getGridIcon(goban, x, y), p2, mp1)), new ArrayList<Float>(Arrays.asList(Float.valueOf((float) 1.0), Float.valueOf((float)0.6), Float.valueOf((float)1.0))));
+                    return grid_ul;
                 default:
                     return null;
             }
