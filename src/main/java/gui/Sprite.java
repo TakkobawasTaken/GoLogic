@@ -56,17 +56,17 @@ public class Sprite {
     // Player sprites
 
     // Images that are frequently used need initialisation
-    //public static final ImageIcon grid_p1 = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p1)));
-    //public static final ImageIcon grid_p2 = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p2)));
-    //public static final ImageIcon grid_p1_c = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p1, wrong)), new ArrayList<Float>(Arrays.asList(Float.valueOf((float) 1.0), Float.valueOf((float)1.0), Float.valueOf((float)0.4))));
-    //public static final ImageIcon grid_p2_c = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p2, wrong)), new ArrayList<Float>(Arrays.asList(Float.valueOf((float) 1.0), Float.valueOf((float)1.0), Float.valueOf((float)0.4))));
+    public static final ImageIcon grid_p1 = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p1)));
+    public static final ImageIcon grid_p2 = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p2)));
+    public static final ImageIcon grid_p1_c = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p1, wrong)), new ArrayList<Float>(Arrays.asList(Float.valueOf((float) 1.0), Float.valueOf((float)1.0), Float.valueOf((float)0.4))));
+    public static final ImageIcon grid_p2_c = merge(new ArrayList<ImageIcon>(Arrays.asList(background, p2, wrong)), new ArrayList<Float>(Arrays.asList(Float.valueOf((float) 1.0), Float.valueOf((float)1.0), Float.valueOf((float)0.4))));
 
     /**
      * Merge the images listed in ArrayList, all with a 1.0 alpha transparency
      * @param images list of ImageIcons to merge
      * @return ImageIcon result of the merge
      */
-   /*
+
     public static ImageIcon merge(ArrayList<ImageIcon> images) {
         ArrayList<Float> transparency = new ArrayList<Float>();
 
@@ -76,14 +76,14 @@ public class Sprite {
 
         return merge(images, transparency);
     }
-*/
+
     /**
      * Merge the images listed in ArrayList, with the corresponding alpha transparency
      * @param images list of ImageIcons to merge
      * @param transparency list of alpha transparency
      * @return ImageIcon result of the merge
      */
-    /*
+
     public static ImageIcon merge(ArrayList<ImageIcon> images, ArrayList<Float> transparency)
     {
         BufferedImage dest = null;
@@ -113,7 +113,7 @@ public class Sprite {
 
         return new ImageIcon(dest);
     }
-*/
+
     /**
      * Allow to know if the intersection should be marked on the goban
      * @param goban goban to get the size of this one
@@ -152,7 +152,7 @@ public class Sprite {
                 break;
         }
 
-        return grid_ul;
+        return  merge(new ArrayList<ImageIcon>(Arrays.asList(getGridIcon(goban, x, y), mp)));
     }
 
     /**
@@ -200,9 +200,9 @@ public class Sprite {
     public static ImageIcon getPlayerIcon(int player) {
         switch (player) {
             case 1:
-                return grid_ul;
+                return grid_p1;
             case 2:
-                return grid_ul;
+                return grid_p2;
             default:
                 return null;
         }
@@ -212,9 +212,9 @@ public class Sprite {
         if (player != owner) {
             switch (player) {
                 case 1:
-                    return grid_ul;
+                    return merge(new ArrayList<ImageIcon>(Arrays.asList(getGridIcon(goban, x, y), p1, mp2)), new ArrayList<Float>(Arrays.asList(Float.valueOf((float)1.0), Float.valueOf((float)1.0), Float.valueOf((float)1.0))));
                 case 2:
-                    return grid_ul;
+                    return merge(new ArrayList<ImageIcon>(Arrays.asList(getGridIcon(goban, x, y), p2, mp1)), new ArrayList<Float>(Arrays.asList(Float.valueOf((float)1.0), Float.valueOf((float)1.0), Float.valueOf((float)1.0))));
                 default:
                     return null;
             }

@@ -32,20 +32,20 @@ public class HoverEffect extends MouseAdapter {
             if (goban.getIntersection(x,y).getStoneChain()==null) {
                 switch (goban.getPlayer().getIdentifier()) {
                     case 1:
-                        intersection.setIcon(Sprite.grid_ul);
+                        intersection.setIcon(Sprite.grid_p1);
                         break;
                     case 2:
-                        intersection.setIcon(Sprite.grid_ul);
+                        intersection.setIcon(Sprite.grid_p2);
                         break;
                 }
             } else {
                 StoneChain sc = goban.getIntersection(x,y).getStoneChain();
                 switch (sc.getOwner().getIdentifier()) {
                     case 1:
-                        intersection.setIcon(Sprite.grid_ul);
+                        intersection.setIcon(Sprite.grid_p1_c);
                         break;
                     case 2:
-                        intersection.setIcon(Sprite.grid_ul);
+                        intersection.setIcon(Sprite.grid_p2_c);
                         break;
 
                 }
@@ -63,8 +63,8 @@ public class HoverEffect extends MouseAdapter {
         if(goban.getSuccessivePassCount()<3) {
             StoneChain sc = goban.getIntersection(x,y).getStoneChain();
             if (sc != null) {
-                if (sc.getOwner().getIdentifier() == 1) intersection.setIcon(Sprite.grid_ul);
-                else intersection.setIcon(Sprite.grid_ul);
+                if (sc.getOwner().getIdentifier() == 1) intersection.setIcon(Sprite.grid_p1);
+                else intersection.setIcon(Sprite.grid_p2);
             } else {
                 intersection.setIcon(Sprite.getGridIcon(goban, x,y,0));
             }
