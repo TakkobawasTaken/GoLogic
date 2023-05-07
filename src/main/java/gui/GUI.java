@@ -234,7 +234,14 @@ public class GUI extends JFrame {
         jAboutInfo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(GUI.this, "Joseph Gamaliel T. Nchuisseu, Filip Niksic-Nadeau and Tanraj Aujla\nVersion 1.0.0", "Informations", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(GUI.this, "Joseph Gamaliel T. Nchuisseu, Filip Niksic-Nadeau and Tanraj Aujla\nVersion 1.0.0\n Rules\n 1.Stones must be placed on the intersections, not on the lines.\n" +
+                        "2.Stones cannot be placed on an intersection that would result in suicide, i.e., a stone that would immediately be captured.\n" +
+                        "3.Stones cannot be placed in a position that would recreate the exact same board position as a previous turn.\n" +
+                        "4.Stones cannot be moved once placed on the board.\n Gameplay:\n 1. Once a stone is placed on the board, it cannot be moved, but it can be captured.\n" +
+                        "2. A stone or group of stones is captured when it is completely surrounded by the opponent's stones.\n" +
+                        "3. A player can also pass their turn if they don't want to place a stone on the board.\n" +
+                        "4.The game ends when both players pass their turn consecutively or when all the intersections on the board are occupied.\n" +
+                        "5.Scoring is done by counting the number of empty intersections surrounded by each player's stones. The player with more territory wins. ", "Informations", JOptionPane.PLAIN_MESSAGE);
             }
         });
 
@@ -254,16 +261,18 @@ public class GUI extends JFrame {
 
         // Optional counting menu
         jMenuScore = new JMenu("Score");
+
         jScoreHelp = new JMenuItem("Help");
         jScoreHelp.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(GUI.this, "To get the score of the game please click on dead stone chains inside an enemy's territory.\n" +
-                        "Clicking a StoneChain toggles it's 'life' status.\n"+
-                        "Once this user input complete, please use the validate command","Score Help", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(GUI.this, "If you wish to see the score and the winner click on validate\n"
+
+                        ,"Score Help", JOptionPane.PLAIN_MESSAGE);
             }
         });
         jScoreHelp.setEnabled(false);
+
         jScoreValidate = new JMenuItem("Validate");
         jScoreValidate.setAccelerator(KeyStroke.getKeyStroke("control V"));
         jScoreValidate.addActionListener(new ValidateScore(this));

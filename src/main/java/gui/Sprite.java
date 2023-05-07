@@ -200,9 +200,9 @@ public class Sprite {
     public static ImageIcon getPlayerIcon(int player) {
         switch (player) {
             case 1:
-                return grid_p1;
+                return p1;
             case 2:
-                return grid_p2;
+                return p2;
             default:
                 return null;
         }

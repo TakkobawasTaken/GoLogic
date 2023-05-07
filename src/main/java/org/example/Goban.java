@@ -20,7 +20,7 @@ public class Goban {
     private final int height;
 
     /**
-     * An table of containing all the intersections of the goban.
+     * A table of containing all the intersections of the goban.
      */
     private final Intersection[][] intersections;
 
